@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('extra/meta-data') %>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/user.css">
+    <link rel="stylesheet" href="<%=saved %>">
+    <link rel="stylesheet" href="<%=cssLink2 %>">
+    <link rel="stylesheet" href="/style/viwpost.css">
+    <link rel="stylesheet" href="/style/allpost.css">
+    <link rel="stylesheet" href="/style/post.css">
+    <link rel="stylesheet" href="<%=cssLink %>">
+    <link rel="stylesheet" href="/style/footer.css">
+    <script src="/scripts/comments.js" defer></script>
+    <script src="/scripts/download.js" defer></script>
+    <script src="/scripts/likes.js" defer></script>
+    <script src="/scripts/savedPost.js" defer></script>
+    <script src="/scripts/showLikes.js" defer></script>
+    <script src="/scripts/numbers2.js" defer></script>
+    <script src="/scripts/notifications.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>View-Posts</title>
+</head>
+
+<body>
+
+    <div class="allCover2">         
+    </div>
+
+    <div class="notification3">
+        <p>Post Saved.</p>
+    </div>
+
+    <div class="final2">
+
+    <% for(const keys of user)  { %>
+
+        <div class="main-pane">
+            <div id="mainLogo">
+                <img src="\image\navbarIcons\vercel-icon-512x449-3422jidz.png" alt="mainlogo" style="width: 2rem; filter: invert(100%);">
+                <h1>Peek</h1>
+            </div>
+
+            <div class="list">
+                <ul>
+                    <li>
+                        <p>
+                            <a href="/user/<%= keys.userId %>">
+                            <img src="\image\navbarIcons\icons8-home-29.png" alt="">
+                            Home
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="/user/myposts/<%= keys.userId %>">
+                            <img src="\image\navbarIcons\icons8-grid-29.png" alt="">
+                            My post
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="catchNotifications" data-user="<%= keys.userId %>" data-userimage="<%= keys.file %>">
+                            <a class="addthisOne">
+                            <img src="\image\navbarIcons\icons8-heart-29.png" alt="" id="showHeart">
+                            <img src="\image\icons8-heart-29 (1).png" alt="" id="notShowHeart" style="display: none;">
+                            Notifications
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="/user/create-post/<%= keys.userId %>">
+                            <img src="\image\navbarIcons\icons8-plus-29.png" alt="">
+                            Create
+                          </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="/account/edit/<%= keys.userId %>">
+                            <img src="<%= keys.file %>" alt="profilePic" id="navProfImg">
+                           Profile
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p id="myLogOut"><a href="/login?userEnable=<%= keys.userId %>">Log Out</a></p>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="notificationCenter">
+        <div class="notificationsDetails">
+            <p>Notifications</p>
+            <img src="" alt="" id="notificationImage">
+        </div>
+
+        <div>
+            <ul class="notificationHolder">
+                <li>
+                    <div class="actualNotifications">
+                        <p class="title">You Uploaded new Post</p>
+                        <p class="note">Places in Singapore</p>
+                        <p class="date">Thu Feb 15 2024</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+  <div class="mainPicture2"> 
+
+    <% for (key of result) { %>
+        <div id="post-pane3">
+            <div class="mainImage">
+                <img src="<%= key.file %>" alt="picture" id="mainImagePic">
+                
+            </div>
+
+            <div class="detailsPage">
+
+                <div class="userProfile">
+                    <% if(key.userID === receivedValue)  { %>
+                        <div class="flexClass">
+                            <img src=" <%= key.author.authorPic %>" alt="" id="imagePic10">
+                            <div class="profileContenct">
+                                <p class="yourName">by You</p>
+                                <p> <%= keys.email %></p>
+                                <% if (key.edited) { %>
+                                <p class="ago">• <%= key.timedifference %></p>
+                                <% } %>
+                            </div>
+                            
+                            <% if (key.edited) { %>
+                            <p class="edited">Edited</p>
+                            <% } %>
+                              
+                        </div>
+                        <% } else { %>
+                            <div class="flexClass">
+                                <img src="<%= key.author.authorPic %>" alt="" id="imagePic10">
+                                <div class="profileContenct">
+                                    <p class="yourName"><a href="/find/<%= keys.userId %>?userID=<%= key.userID %>"><%= key.author.authName %></a></p>
+                                    <p> <%= key.title %></p>
+                                    <% if (key.edited) { %>
+                                    <p class="ago">• <%= key.timedifference %></p>
+                                    <% } %>
+                                </div>
+
+                                <% if (key.edited) { %>
+                                <div>
+                                <p class="edited">Edited</p>
+                                </div>
+                                <% } %>
+                               
+                                </div>
+                                
+                            <% } %>                    
+                </div>
+               
+                <div class="commetSection">
+
+                    <div class="flexClass2">
+                        <img src="<%= key.author.authorPic %>" alt="" id="imagePic11">
+                        <div class="profileContenct">
+                            <p class="yourName2">Author</p>
+                            <p><%= wordLimit %></p>
+                            
+                        </div>
+                        </div>
+                     
+                    <div class="comment">
+                        <button id="loadsComments" data-postnumber="<%=key._id%>" data-userid="<%= receivedValue%>">Loads Comments</button>
+                      </div>
+            
+                      <ul class="postPane">
+                    </ul>
+                </div>
+
+                <div class="viewsCount">
+                    <div class="icons">
+
+                        <div class="increse" id="increse">
+                        <label  for="increseLikes"><img src="\image\icons8-heart-28.png" alt=""></label>
+                        <input type="button" id="increseLikes" data-useridnumber="<%=key._id%>" data-userid="<%= receivedValue%>" style="display: none;">  
+                        <p id="downloadSet1"><%=key.likes.likeCount%></p>
+                        </div>
+
+                        <div class="decrease">
+                        <label  for="decreseLikes"><img src="\image\icons8-heart-28 (1).png" alt=""></label>  
+                        <p id="downloadSet2"><%=key.likes.likeCount%></p>
+                        <input type="button" id="decreseLikes" data-useridnumber="<%=key._id%>" data-userid="<%= receivedValue%>" style="display: none;">
+                        </div>
+
+                        <% if (key.commentsPrivacy) { %>
+                        <img src="\image\icons8-comment-26.png" alt="">
+                        <p><%=length%></p>
+                        <% } %>
+
+                        <% if(key.downloadPrivacy) { %>
+                        
+                        <label for="download"><img src="\image\icons8-download-26.png" alt=""></label>  
+                        <p id="downloadSet"><%=key.downloads%></p>
+                        <input type="button" id="download" data-imgurl="<%=key.file%>"  data-useridnumber="<%=key._id%>">
+
+                        <% } %>
+
+                        <% if(key.userID === receivedValue)  { %>
+                        <div class="edite">
+                            <p class="privacyOne"><a href="/account/edit/privacy/<%=key._id%>?userID=<%=keys.userId%>">Privacy</a></p>
+                            <p class="editeOne"><a href="/user/edite/<%=key._id%>?userID=<%=keys.userId%>">Edite</a></p>
+                            <p class="deleteOne"><a href="/user/delete/<%= keys.userId %>/<%=key._id%>">Delete</a></p>   
+                        </div>
+                        <% } %>
+                    </div>
+
+                    <div class="hashHolder">
+
+                        <% if(hastags) { %>
+                           <% for (hash of hastags) { %>
+                               <p>#<%= hash %></p>
+                               <% } %>
+                        <% } %> 
+                   </div>
+
+                    <div class="countDetails">
+
+                    <div class="countDetail2">   
+                    <p><span class= "keyDate" id="keyDate2"><%=key.viewCount%></span>views</p>
+                    <p id="dataWise"><%=key.date%></p>
+                    </div>
+
+                    <div class="saved">
+
+                        <div class="savePost" id="savePost">
+                        <label  for="savedButton"><img src="\image\icons8-bookmark-25.png" alt=""></label>
+                        <input type="button" id="savedButton" data-postidnumber="<%=key._id%>" data-userid="<%= receivedValue%>" style="display: none;">  
+                        </div>
+
+                        <div class="notsavePost" id="notsavePost">
+                            <label  for="notsavedButton"><img src="\image\icons8-bookmark-25 (1).png" alt=""></label>
+                            <input type="button" id="notsavedButton" data-postidnumber="<%=key._id%>" data-userid="<%= receivedValue%>" style="display: none;">  
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                <% if(key.userID === receivedValue) { %>
+
+                <div id="fixedLinks2">
+
+                    <div class="close">
+                    <p class="linkTitle">Likes</p>
+                    <img src="\image\icons8-close-button-22.png" alt="" id="linkCloseButton">
+                    </div>
+
+                    <% for(const likeDetails of likedArray) { %>
+
+                            <p class="myLinks">
+                                <a href="">
+                                    <img src="<%=likeDetails.file%>" alt="picture">
+                                    <% if(likeDetails.userId == receivedValue) { %>
+                                     You
+                                    <%  } else { %>
+                                    <%= likeDetails.userName %>
+                                    <% } %>
+                                </a>
+                            </p>        
+                    <% } %>
+                </div>
+                <% } %> 
+               
+                <div class="inputComments">
+
+                    <% if (key.commentsPrivacy) { %>
+                    <div id="form">
+                        <form action="/user/all-post/<%=key._id%>?value=<%= keys.userId %>" method="POST">
+                            <input type="text" name="titlesummery" id="form-summery" placeholder="Add a Comment.."  maxlength="20" autocomplete="off" required>
+                            <button type="submit" id="postButton">
+                                <h3>Post</h3>
+                            </button>
+                        </form>
+                    </div>
+                    <% } else { %>
+                        <p id="turnoff">Comments are turned off.</p>
+                    <% } %>   
+
+                </div>   
+            </div>
+        </div>
+
+         <% } %>
+
+         <% } %>
+
+    
+        </div>  
+    </div>   
+</body>
+</html>

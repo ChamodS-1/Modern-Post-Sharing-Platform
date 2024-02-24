@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('extra/meta-data') %>
+        <link rel="stylesheet" href="/style/main.css">
+        <link rel="stylesheet" href="/style/signUp.css">
+        <link rel="stylesheet" href="/style/post.css">
+        <link rel="stylesheet" href="/style/allpost.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <title>Login</title>
+</head>
+
+<body>
+
+    <% if(notUser) { %>
+
+        <div class="notification2">
+            <p>User not Found</p>
+        </div>
+        
+    <% } else if(password){ %>
+
+        <div class="notification2">
+            <p>Incorrect Password</p>
+        </div>
+        
+        <% } else if(passreset) { %>
+
+            <div class="notification2">
+                <p>Password Reset</p>
+            </div>
+            
+        <% }  else if(enable) { %>
+
+            <div class="notification2">
+                <p>You Must Login</p>
+            </div>
+            
+            <% }  else if(active) { %>
+
+                <div class="notification2">
+                    <p>Your Account Not Actived</p>
+                </div>
+                
+                <% }  else if(profileActive) { %>
+
+                    <div class="notification2">
+                        <p>Account is Already Active Please Login</p>
+                    </div>
+                    
+                 <% }  %>
+
+   
+    
+       
+
+        <div id="inser-formSignUp">
+
+            <div id="form-headSignUp">
+                <img src="\image\picket3.png" alt="mainLogoImage">
+            </div>
+
+
+            <div id="signUpForm">
+
+                <form action="/login" method="POST">
+
+                   
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+
+                    <button type="submit" id="signUpButton">
+                        <h3>Login</h3>
+                    </button>
+
+                </form>
+
+                <a href="/sign-up"><p class="havaanAccount">Create Account<p></a>
+                <a href="/reset"><p class="havaanAccount">Reset Password<p></a>
+            </div>
+        </div>
+  
+</body>
+</html>
+

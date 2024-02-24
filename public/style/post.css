@@ -1,0 +1,481 @@
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+
+    text-align: center;
+    font-size: 4rem;
+    color: aliceblue;
+    margin-top: 0.5rem;
+}
+
+input,
+textarea {
+
+    border-radius: 30px;
+    background: none;
+    display: block;
+    color: aliceblue;
+    border: 1px solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+    padding: 0.7rem 1rem;
+    width: 80%;
+    margin-right: 0;
+}
+
+select{
+    border-radius: 30px;
+    background: none;
+    color: aliceblue;
+    border: 1px solid rgb(255, 255, 255);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    padding: 0.7rem 1rem;
+    width: 85.5%;
+    margin-right: 0;
+}
+
+select option{
+
+    color: rgb(0, 0, 0);
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.inser-form{
+
+    display: flex;
+    background-color: rgb(23,28,31);
+    width: fit-content;
+    gap: 1.5rem;
+    border-radius: 15px;
+    margin-left: 38rem;
+    margin-top: 5rem;
+    color: aliceblue;
+    overflow: hidden;
+    position: relative;   
+}
+
+.inser-form2{
+
+    display: flex;
+    background-color: rgb(23,28,31);
+    width: fit-content;
+    gap: 1.5rem;
+    border-radius: 15px;
+    margin-left: 40rem;
+    margin-top: 5rem;
+    color: aliceblue;
+    overflow: hidden;
+    position: relative; 
+    animation: moveAnimation 1.5s ease forwards;   
+}
+
+.forward{
+    animation: moveAnimation 1.5s ease forwards;
+}
+
+.reverse {
+    animation: moveAnimation2 1.5s ease forwards;    
+}
+
+@keyframes moveAnimation2 {
+    from {
+        right: calc(100% - 84rem); 
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes moveAnimation {
+    from {
+        right: 0;
+    }
+    to {
+        right: calc(100% - 84rem); 
+    }
+}
+
+#inser-form2{
+
+    align-items:center;
+    background-color: rgb(23,28,31);
+    width: 60%;
+    border-radius: 55px;
+    margin: 2rem auto;
+    padding: 0.6rem 4rem;
+    color: aliceblue;
+}
+
+#picUpload{
+    width: fit-content;
+    z-index: 30;
+    position: absolute;
+    bottom: 0.7rem;
+    left: 4.3rem;
+    background-color: rgba(26, 26, 26, 0.822);    
+}
+
+#animaionBut{
+    width: fit-content;
+    z-index: 20;
+    position: absolute;
+    top: 1.2rem;
+    left: 27rem;
+    background-color: rgba(26, 26, 26, 0.822);
+    display: none;
+}
+
+#animaionBut2{
+    width: fit-content;
+    z-index: 20;
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    background-color: rgba(26, 26, 26, 0.822);
+    display: none;   
+}
+
+#animaionBut3{
+    width: fit-content;
+    z-index: 20;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    background-color: rgba(26, 26, 26, 0.822);
+       
+}
+
+input,
+textarea,label,button{
+
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#form{
+
+    width: 100%;
+}
+
+
+#form2 #post-content{
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.523);
+    border-radius: 0;
+    resize: none;
+    outline: none;
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    height: 8rem;
+    margin-top: 1rem;
+}
+
+#form2 .tagsSection{
+    margin-top: 1.4rem;
+    width: 25rem;
+    height: 7.2rem;
+    background-color: transparent;
+    display: none;
+    
+}
+
+#form2 .tagsSection span button{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+#form2 .textSize{
+    font-size: 0.8rem;
+    margin: 0;
+    margin-top: -0.3rem;
+    margin-left: 21.5rem;
+}
+
+.animaclass{
+    
+    animation: increaseSizeSpan 0.8s ease forwards;
+}
+
+
+@keyframes increaseSizeSpan {
+    0% { transform: scale(0.98); } 
+    100% { transform: scale(1); }
+}
+
+#form2 .tagsSection span button:hover{
+
+    color: rgb(252, 0, 63);
+    border: 1px solid rgb(252, 0, 67);
+    background-color: rgba(252, 0, 59, 0.1);
+    cursor: pointer;
+}
+
+.tagsSection span{
+    margin-right: 0.5rem;
+    
+}
+
+#form2 #addTags{
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+ .tagsInsert{
+    background-color: transparent;
+    width: fit-content;
+    position: fixed;
+    top: 10rem;
+    left: 32rem;
+    gap: 0.5rem;
+    z-index: 100;
+    display: none;
+}
+
+.tagsInsert #errorMsg{
+    font-size: 1rem;
+    margin-left: 10.5rem;
+}
+
+.tagsInsert #tangsLemgth{
+    font-size: 0.9rem;
+    margin-left: 29rem;
+    margin-top: -1.6rem;
+}
+
+.tagsInsert #tangsLemgth .tagLengthFinal{
+    margin: 0;
+}
+
+.tagsInsert2{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 0.6rem;
+}
+
+.tagsInsert2 #tagsInput{
+    width: 31rem;
+    font-size: 1.2rem;
+   
+}
+
+.tagsInsert2 #tagsClick{
+    width: 4rem;
+   
+}
+
+.tagsInsert2 #tagsClickCancle{
+    width: 6rem;
+   
+}
+
+.tagsInsert button,.tagsInsert input{
+    margin: 0;
+    padding: 1rem;
+}
+
+.balckScreen{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.886);
+    position: fixed;
+    z-index: 20;
+    display: none;
+}
+
+#form2{
+    margin-top: 0.5rem;
+    width: 32rem;
+    display: none;
+}
+
+#form2 #post-title{
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.523);
+    border-radius: 0;
+    font-size: 2rem;
+}
+
+#form2 p{
+    font-size: 2.6rem;
+    color: rgba(255, 255, 255, 0.523);
+    user-select: none;    
+}
+
+#form2 #post-title:focus{
+    outline: none;
+}
+
+#form3{
+    margin-top: 2rem;
+    width: 32rem;
+}
+
+label h3{
+
+    margin: 0.7rem;
+}
+
+#form-head{
+
+    width: 32rem;
+     height: 34rem;
+    overflow: hidden;
+    background-color: rgb(38,38,38);
+    background-image: url('/image/Screenshot 2024-02-08 004943.png');
+    background-position: center;
+    background-repeat: no-repeat;       
+}
+
+#form-head2{
+
+    width: 50%;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+#form-head a{
+
+    text-decoration: none;
+}
+#form-head h4{
+
+    background-color: rgb(47,192,120);
+    width: fit-content;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+
+#form-head #openMail{
+    background-color: rgb(47,192,120);
+    width: fit-content;
+    padding: 0.4rem;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+}
+
+#form-head a h3{
+    font-family: 'Libre Bodoni', serif;
+    font-size: 3rem;
+    margin: 0;
+    color: aliceblue;
+}
+
+#emailName{
+    font-size: 1.2rem;
+}
+
+.already{
+    text-align: center;
+    margin-right: 3rem;
+    border-radius: 30px;
+    background: none;
+    border: 1px solid rgb(255, 255, 255);
+    color: aliceblue;
+    margin-top: 30px;
+    padding: 0.7rem 1rem;
+}
+
+.already:hover{
+    color: rgb(0, 122, 252);
+    border: 1px solid rgb(0, 122, 252);
+    background-color: rgb(0, 122, 252,0.1);
+    cursor: pointer;
+}
+
+button{
+
+    margin-right: 3rem;
+    border-radius: 30px;
+    background: none;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0.7rem 1rem;
+    color: aliceblue;
+    margin-top: -10px;
+}
+
+.textSizeNumber{
+    margin: 0;
+}
+
+.textSizeNumber2{
+    margin: 0;
+}
+.errorMessage{
+    width: fit-content;
+    background-color: rgb(211, 42, 82);
+    padding: 0.5rem;
+    border-radius:5px;
+}
+
+.errorMessage2{
+    width: fit-content;
+    background-color: rgb(211, 183, 42);
+    padding: 0.5rem;
+    border-radius:5px;
+}
+
+.noterrorMessage{
+    width: fit-content;
+    background-color: rgb(42, 202, 211);
+    padding: 0.5rem;
+    border-radius:5px;
+}
+
+button:hover{
+
+    color: rgb(0, 122, 252);
+    border: 1px solid rgb(0, 122, 252);
+    background-color: rgb(0, 122, 252,0.1);
+    cursor: pointer;    
+}
+
+button h3{
+    margin: 0;
+}
+
+
+#pickedImage{
+
+    width: 35rem;
+    display: none;
+    overflow: hidden;
+    border: 15px;
+    z-index: 10;
+}
+
+#pickedImage2{
+
+    width: 30rem;
+    overflow: hidden;
+    border: 15px;
+    z-index: 10;
+}
+
+.myUploads{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 30;
+    position: absolute;
+    bottom: 1rem;
+    left: 8.5rem;
+    background-color: rgb(0,149,246);
+    padding: 0.7rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.myUploads p{
+    margin: 0;
+    font-size: 1rem;
+}

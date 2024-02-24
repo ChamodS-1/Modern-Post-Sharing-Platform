@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('extra/meta-data') %>
+        <link rel="stylesheet" href="/style/main.css">
+        <link rel="stylesheet" href="/style/user.css">
+        <link rel="stylesheet" href="/style/viwpost.css">
+        <link rel="stylesheet" href="/style/allpost.css">
+        <link rel="stylesheet" href="/style/post.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <!-- <script src="/scripts/file-priview.js" defer></script> -->
+        <!-- <script src="/scripts/animation.js" defer></script> -->
+        <script src="/scripts/tags.js" defer></script>
+        <script src="/scripts/notifications.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <title>Post</title>
+</head>
+<body>
+
+   
+
+    <div class="final">
+
+    <% for(const keys of user)  { %>
+
+        <div class="main-pane">
+            <h5 id="mainLogo"><img src="\image\navbarIcons\28-287308_instagram-logo-text-white.png" alt="fgdfg" style="width: 7rem;"></h5>
+
+            <div class="list">
+                <ul>
+                    <li>
+                        <p>
+                            <a href="/user/<%= keys.userId %>">
+                            <img src="\image\navbarIcons\icons8-home-29.png" alt="">
+                            Home
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="/user/myposts/<%= keys.userId %>">
+                            <img src="\image\navbarIcons\icons8-grid-29.png" alt="">
+                            My post
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="catchNotifications" data-user="<%= keys.userId %>" data-userimage="<%= keys.file %>">
+                            <a class="addthisOne">
+                            <img src="\image\navbarIcons\icons8-heart-29.png" alt="" id="showHeart">
+                            <img src="\image\icons8-heart-29 (1).png" alt="" id="notShowHeart" style="display: none;">
+                            Notifications
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="/user/create-post/<%= keys.userId %>">
+                            <img src="\image\navbarIcons\icons8-plus-29.png" alt="">
+                            Create
+                          </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="/account/edit/<%= keys.userId %>">
+                            <img src="<%= keys.file %>" alt="profilePic" id="navProfImg">
+                           Profile
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p id="myLogOut"><a href="/login?userEnable=<%= keys.userId %>">Log Out</a></p>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="notificationCenter">
+        <div class="notificationsDetails">
+            <p>Notifications</p>
+            <img src="" alt="" id="notificationImage">
+        </div>
+
+        <div>
+            <ul class="notificationHolder">
+                <li>
+                    <div class="actualNotifications">
+                        <p class="title">You Uploaded new Post</p>
+                        <p class="note">Places in Singapore</p>
+                        <p class="date">Thu Feb 15 2024</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+        <div class="inser-form2">
+
+            <% for (key of result) { %>
+                
+                <div id="form-head">
+                    <button id="animaionBut">next</button>
+                    <button id="animaionBut2">back</button>
+                    <form action="/user/edite/<%= key._id %>?userID=<%= userID %>" method="POST">
+                    <img src="<%= key.file %>" alt="pickedImage" id="pickedImage2">
+                
+                </div>
+                <!-- <input type="file" name="image" id="picUpload"  accept=".png,.jpeg,.jpg" required> -->
+           
+            <div id="form3">
+
+                    <input type="text" name="titlepost" id="post-title"  placeholder="Title" maxlength="22" autocomplete="off" value="<%= key.title %>" required>
+                    <p class="textSize" style="color: rgb(23,28,31);"><span class="textSizeNumber2">0</span>/22</p>
+                    <!-- <p class="addAllTgas">#Add Tags here</p> -->
+
+                    <!-- <div class="tagsSection">
+                        
+                    </div> -->
+
+                    <!-- <div class="tagsInsert">
+                        <div class="tagsInsert2">
+                            
+                            <input type="text"  id="tagsInput" maxlength="20">
+                            <button type="button" id="tagsClick">Add</button>
+                            <button type="button" id="tagsClickCancle">Cancle</button>
+                        </div>
+                        <p id="tangsLemgth"><span class="tagLengthFinal">0</span>/20</p>
+                        <p id="errorMsg"></p>
+
+                    </div> -->
+
+                    <!-- <button type="button" id="addTags">Add</button> -->
+
+                    <textarea name="hashTags" rows="3" id="hashTags" placeholder="use , to separate tags"><%= key.hastags %></textarea>
+                    <textarea name="postcontent" rows="7" id="post-content" placeholder="Describe&#10;What You&#10;Want" required maxlength="500"><%= key.postcontent %></textarea>
+                    <p class="textSize" style="color: rgb(23,28,31);"><span class="textSizeNumber">0</span>/200</p>
+                    
+
+                    <button type="submit">
+                        <h3>Re Post</h3>
+                    </button>
+
+                </form>
+            </div>
+
+            <% } %>
+
+        </div>
+
+        <% } %>
+
+    </div>   
+</body>
+</html>
+

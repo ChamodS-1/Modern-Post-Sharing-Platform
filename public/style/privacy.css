@@ -1,0 +1,150 @@
+.toggle-control {
+    display: block;
+    position: relative;
+    padding-left: 100px;
+    margin-right: -3rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .toggle-control input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .toggle-control input:checked ~ .control {
+    background-color: rgb(255, 255, 255);
+  }
+  .toggle-control input:checked ~ .control:after {
+    left: 30px;
+  }
+  .toggle-control .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 55px;
+    border-radius: 25px;
+    background-color: rgb(50,53,57);
+    transition: background-color 0.15s ease-in;
+  }
+  .toggle-control .control:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 25px;
+    background: rgb(0, 0, 0);
+    transition: left 0.15s ease-in;
+  }
+
+
+.showDownload{
+  display: flex;
+  align-items:center;
+  gap: 10rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.311);
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+  .downloadDiscription p{
+    margin: 0;
+  }
+  
+  .downloadDiscription .sub{
+    font-size: 0.9rem;
+  }
+
+  .downloadDiscription .mini{
+    font-size: 0.75rem;
+    color: rgb(160,162,165);
+  }
+
+  .total .mini{
+    font-size: 0.75rem;
+    color: rgb(160,162,165);
+  }
+
+  .notification4{
+    position: fixed;
+    background-color: rgba(38, 38, 38, 0.884);
+    padding: 0.9rem 12rem 0.9rem 0.9rem;
+    top: 40rem;
+    left: 52rem;
+    border-radius: 8px;
+    z-index: 500;
+    animation: increaseSize 0.8s ease forwards;
+    display: none;
+}
+
+@keyframes increaseSize {
+    0% { transform: scale(1.1); } 
+    100% { transform: scale(1); }
+}
+
+
+.notification4 p{
+    font-size: 0.88rem;
+    color: rgb(215, 218, 223);
+    margin: 0;
+}
+
+/* sencod toggle */
+.toggle-control2 {
+  display: block;
+  position: relative;
+  padding-left: 100px;
+  margin-left: 6.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.toggle-control2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.toggle-control2 input:checked ~ .control {
+  background-color: rgb(255, 255, 255);
+}
+.toggle-control2 input:checked ~ .control:after {
+  left: 30px;
+}
+.toggle-control2 .control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 55px;
+  border-radius: 25px;
+  background-color: rgb(50,53,57);
+  transition: background-color 0.15s ease-in;
+}
+.toggle-control2 .control:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 25px;
+  background: rgb(0, 0, 0);
+  transition: left 0.15s ease-in;
+}
+

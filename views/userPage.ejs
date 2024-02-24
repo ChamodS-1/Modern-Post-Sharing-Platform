@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('extra/meta-data') %>
+    
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/user.css">
+    <link rel="stylesheet" href="/style/card.css">
+    <link rel="stylesheet" href="/style/loadingScrenn.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <script src="/scripts/loadingScreen.js" defer></script>
+    <script src="/scripts/catchAllSaved.js" defer></script>
+    <script src="/scripts/notifications.js" defer></script>
+    <script src="/scripts/hiddenMsg.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>User Page</title>
+</head>
+
+<body>
+
+    <div class="allCover">
+                
+    </div>
+
+    <!-- <%- include('extra/main-pane copy') %> -->
+<div class="final">
+
+    <div class="main-pane">
+        <div id="mainLogo">
+            <img src="\image\navbarIcons\vercel-icon-512x449-3422jidz.png" alt="mainlogo" style="width: 2rem; filter: invert(100%);">
+            <h1>Peek</h1>
+        </div>
+    
+    <% if(isUpdated) { %>
+    <div class="notification2">
+        <p>Updated Successfully</p>
+    </div>
+    <% } %>
+
+    <% if(resetted) { %>
+        <div class="notification2">
+            <p>Password Reset</p>
+        </div>
+    <% } %>   
+
+     <% if(isDelete) { %>
+        <div class="notification2">
+            <p>Deleted Successfully</p>
+        </div>
+      <% } %>
+
+      <% if(profedite) { %>
+        <div class="notification2">
+            <p>Edite Successfully</p>
+        </div>
+      <% } %>
+
+    <% for(const keys of user)  { %>
+
+        <div class="list">
+            <ul>
+                <li>
+                    <p>
+                        <a href="/user/<%= keys.userId %>" id="<%= style %>" id="<%= style1 %>">
+                        <img src="\image\navbarIcons\icons8-home-29.png" alt="">
+                        Home
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="/user/myposts/<%= keys.userId %>" id="<%= style1 %>" id="<%= style %>">
+                        <img src="\image\navbarIcons\icons8-grid-29.png" alt="">
+                        My post
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p class="catchNotifications" data-user="<%= keys.userId %>" data-userimage="<%= keys.file %>">
+                        <a class="addthisOne">
+                        <img src="\image\navbarIcons\icons8-heart-29.png" alt="" id="showHeart">
+                        <img src="\image\icons8-heart-29 (1).png" alt="" id="notShowHeart" style="display: none;">
+                        Notifications
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="/user/create-post/<%= keys.userId %>">
+                        <img src="\image\navbarIcons\icons8-plus-29.png" alt="">
+                        Create
+                      </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="/account/edit/<%= keys.userId %>">
+                        <img src="<%= keys.file %>" alt="profilePic" id="navProfImg">
+                       Profile
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p id="myLogOut"><a href="/login?userEnable=<%= keys.userId %>">Log Out</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="notificationCenter">
+        <div class="notificationsDetails">
+            <p>Notifications</p>
+            <img src="" alt="" id="notificationImage">
+        </div>
+
+        <div>
+            <ul class="notificationHolder">
+                <li>
+                    <div class="actualNotifications">
+                        <p class="title">You Uploaded new Post</p>
+                        <p class="note">Places in Singapore</p>
+                        <p class="date">Thu Feb 15 2024</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mainPicture">
+
+        <% if (userSet)  { %> 
+
+        <div class="userDetauilsPage">
+        <img id="userImge" src="<%= keys.file %>" alt="picture">
+        <div class="userDetauilsPage2">
+         <div class="userDetails4">
+        <p id="userTopName"><%= devidedUserName %></p>
+        <a href="/account/edit/<%= keys.userId %>"><p class="follow">Edite</p></a>
+    </div>
+        <div class="userDetauilsPage3">
+
+            <% if(count2) { %>
+            <p><%=count2 %> posts</p>
+            <% } else if(count==1) { %>
+                <p><b><%=count %></b> post</p>
+                <% } else { %>
+                <p><b><%=count %></b> posts</p>
+                <% } %>
+
+            <p><b><%= keys.followers.length %></b> Followers</p>
+            <p><b><%= keys.following.length %></b> Following</p>
+        </div>
+
+        <div class="bioSection">
+            
+            <% for(const keyData of keys.bio) { %>
+
+            <p><%= keyData.msg %></p>
+            <% } %>
+            
+            <div class="linkSection">
+
+                <% for(const linkData of linkArray) { %>
+
+                        <p>
+                            <a href="https://<%= linkData.linkAdd %>" target="_blank">
+                                <img src="\image\icons8-link-15.png" alt="">
+                                <b><%= linkData.linkName %></b>
+                            </a>
+                        </p>
+
+                        
+                <% } %>
+
+                <% if(size==1) { %>
+                <p id="sizePredictor">+<%= size %> link</p>
+                <% } else if(size>1) { %>
+                <p id="sizePredictor">+<%= size %> links</p>
+                <% } %>
+            </div>  
+        </div>
+
+        <div id="fixedLinks">
+
+            <div class="close">
+            <p class="linkTitle">Links</p>
+            <img src="\image\icons8-close-button-22.png" alt="" id="linkCloseButton">
+            </div>
+
+            <% for(const linkData of keys.link) { %>
+
+                <% if(linkData.linkName && linkData.linkAdd){ %>
+                    
+                    <p class="myLinks">
+                        <a href="https://<%= linkData.linkAdd %>" target="_blank">
+                            <img src="\image\icons8-link-26.png" alt="">
+                            <%= linkData.linkName %>
+                        </a>
+                    </p>
+                    <% } %>
+            <% } %>
+        </div>
+    </div>
+    </div>
+
+    <div class="underBar">
+        <div class="underBar2">
+        <div class="section1 selectThis2 myBorder">
+            <img src="\image\navbarIcons\icons8-grid-16.png" alt="grid">
+            <p> <a href="/user/myposts/<%= keys.userId %>"> POSTS</p></a>
+        </div>
+
+        <div class="section1 selectThis">
+            <img src="\image\navbarIcons\icons8-bookmark-18.png" alt="grid">
+            <label for="getsaved"><p>SAVED</p></label>
+            <input type="button" id="getsaved" data-userid="<%= keys.userId %>" style="display: none;">   
+
+        </div>
+    </div>
+    </div>
+
+    <% } %>
+    
+    <ul class="mainDashboard">
+    <% if(count === 0)  { %>
+        <div class="noPostToShow">
+            <a href="/user/create-post/<%= keys.userId %>">
+            <img src="\image\icons8-create-35.png" alt="">
+            <p><b>Create Your First Post</b></p>
+             </a>
+        </div>
+        <% } else { %>
+            
+                <% for(const key of allPosts)  { %>
+          <li>           
+            <main>
+                <a href="/user/all-post/<%=key._id%>?value=<%= keys.userId %>">
+                    <div class = "card">
+                    <img src="<%= key.file %>" alt="picture" id="mainImage">
+                  <div class="card-content">
+                  
+                    <p>
+                            <span id="spanFlex">
+                                <img src="/image/icons8-view-30.png" alt="" id="view">
+                                <h3 id="viewsCount"><%= key.viewCount %></h3>
+                            </span>
+                            <div id="buttons">
+                            </div>
+                    </p>
+                  </div>
+                </div>
+            </a>
+        </main>
+    </li>
+
+   <% } %>
+
+   <% } %>
+
+   <% } %>
+
+</ul>
+
+<div id="footer">
+
+    <h2>fireShip</h2>
+    <h5> &copy; All Rights Reseved</h5>
+
+</div>
+
+<div class="allCover">
+                
+</div>
+
+</div>
+</div>
+
+    </body>
+
+    </html>
+    

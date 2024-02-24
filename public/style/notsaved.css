@@ -1,0 +1,7 @@
+.countDetails .saved .notsavePost{
+    display: block;
+}
+
+.countDetails .saved .savePost{
+    display: none;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('extra/meta-data') %>
+        <link rel="stylesheet" href="/style/main.css">
+        <link rel="stylesheet" href="/style/signUp.css">
+        <link rel="stylesheet" href="/style/post.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500;600&display=swap" rel="stylesheet">
+        <script src="/scripts/file-priview2.js" defer></script>
+        <title>Sign Up</title>
+</head>
+
+<body>
+
+    <% if(emailstatus) { %>
+        <div class="notification2">
+            
+            <p>Email Not Match</p>
+        </div>
+    <% } else if(passwordstatus){ %>
+
+        <div class="notification2">
+        <p>Password length not enough</p>
+        </div>
+
+        <% } else if(emailpasswordstatus) { %>
+            <div class="notification2">
+        <p >Email Not Match & Password length not enough</p>
+           </div>
+        <% } else if(existing) { %>
+            <div class="notification2">
+            <p>Email already has an account</p>
+           </div>
+        <% } %>
+
+        <div id="inser-formSignUp">
+
+            <div id="form-headSignUp">
+                <img src="\image\peek2.png" alt="mainLogoImage">
+            </div>
+
+            <div id="signUpForm">
+
+                <form action="/sign-up" method="POST" enctype="multipart/form-data">
+
+                    <img src="\image\abstract-user-flat-4.png" alt="pickedImage" id="picSignUpPic">
+
+                    <input type="file" name="image1" id="picUpload" required accept=".png,.jpeg,.jpg" style="display: none;">
+                  
+                    <input type="text" name="userName" id="userName1" placeholder="Username" maxlength="25" required>
+
+                 
+                    <input type="email" name="email" id="email1" placeholder="email" required>
+
+                 
+                    <input type="email" name="reemail" id="re-email1" placeholder="confirm email" required>
+
+                   
+                    <input type="password" name="password" id="password1" placeholder="password" required>
+
+                    <div class="labelPictureIpload">
+                    <label for="picUpload">Profile Picture</label>
+                    </div>
+
+                    
+
+                    <button type="submit" id="signUpButton">
+                        <h3>Create Account</h3>
+                    </button>
+                   
+
+                </form>
+
+                <a href="/login"><p class="havaanAccount">Have an Account? Login<p></a>
+            </div>
+        </div>
+
+        
+
+</body>
+
+</html>
+

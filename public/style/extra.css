@@ -1,0 +1,108 @@
+.condition .setProf{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.condition #accountCenter{
+    width: 15rem;
+    height: 13.2rem;
+    background-color: rgb(38,38,38);
+    border-radius: 18px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    padding: 0.9rem;
+     
+}
+
+.condition li{
+    width: 8.5rem;
+    list-style: none;
+    margin-left: 0.8rem;
+    background-color: transparent;
+    padding: 0.6rem 6.2rem 0.6rem 0.7rem;
+    border-radius: 8px;
+    
+}
+
+.condition .this{
+    background-color: rgb(38,38,38);
+}
+
+
+.condition li:hover{
+    background-color: rgb(58, 58, 58);
+    cursor: pointer;
+}
+
+.condition li p{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0;
+    width: fit-content;
+    
+}
+
+.condition li p a{
+    color: aliceblue;
+    font-size: 0.95rem;
+    width: fit-content;
+}
+
+.othertabs .passwordSec{
+    margin-bottom: 1rem;
+    
+}
+
+#accountCenter p{
+    margin: 0;
+}
+
+#accountCenter .centerDetails{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0.6rem;
+
+}
+
+#accountCenter .titleClass{
+    margin-bottom: 0.35rem;    
+}
+
+#accountCenter .informations{
+    margin-bottom: 0.6rem;    
+}
+
+.informations{
+    font-size: 0.73rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    color: rgb(160,162,165);
+}
+
+#accountCenter .informations2{
+    font-size: 0.73rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    color: rgb(0,149,246);
+    margin-top: 0.8rem;
+}
+
+.miniDetails{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+}
+
+.titleClass{
+    margin-top: 2rem;
+}
+
+.informationsDec{
+    font-size: 0.73rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    color: rgb(160,162,165);
+}

@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+#form-headSignUp{
+    width: fit-content;
+}
+
+#form-headSignUp img{
+    width: 35rem;
+    z-index: 100;
+}
+
+#inser-formSignUp{
+   
+    margin-top: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    animation: largeMove 0.7s ease forwards    
+}
+
+@keyframes largeMove {
+    0% { transform: scale(1); } 
+    100% { transform: scale(1.04); }
+}
+
+#signUpForm{
+    margin-top: 6.5rem;
+    width: 25rem;
+    text-align: center;
+}
+
+#signUpForm a{
+    color: aliceblue;
+}
+
+#signUpForm input{
+    padding: 0.8rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(184, 184, 184, 0.895);
+    outline: none;
+    font-size: 1.1rem;    
+}
+
+#signUpForm label{
+    color: aliceblue;
+    cursor: pointer;
+    background-color: rgb(0, 166, 255);
+    border-radius: 25px;
+    padding: 0.8rem 5rem;
+    margin-left: -3rem;
+    
+}
+
+#signUpForm label:hover{
+    background-color: rgb(3, 148, 226);
+}
+
+.labelPictureIpload{
+    margin-top: 3rem;
+}
+
+#signUpButton{
+
+    color: aliceblue;
+    cursor: pointer;
+    background-color: rgb(0, 166, 255);
+    border-radius: 25px;
+    padding: 0.8rem 5rem;
+    margin-top: 2rem;
+    border: none;
+}
+
+#signUpButton:hover{
+    background-color: rgb(0, 144, 222);
+}
+
+#signUpButton:active{
+    background-color: rgb(3, 122, 187);
+}
+
+.havaanAccount{
+    font-size: 0.9rem;
+    margin-left: -3rem;
+}
+
+.havaanAccount:hover{
+    color: aqua;
+}
+
+#picSignUpPic{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    position: absolute;
+    padding: 0.2rem;
+    top: -1.5rem;
+    left: 60.5rem;
+    border: 2px solid rgb(255, 255, 255);
+     
+}
+
+

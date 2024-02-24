@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('extra/meta-data') %>
+        <link rel="stylesheet" href="/style/main.css">
+        <link rel="stylesheet" href="/style/post.css">
+        <link rel="stylesheet" href="/style/allpost.css">
+        <link rel="stylesheet" href="/style/signUp.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <title>Password Reset</title>
+</head>
+
+<body>
+
+    <% if(notUser) { %>
+
+        <div class="notification2">
+            <p>User not Found</p>
+        </div>
+        
+    <% }  %>
+
+        <div id="inser-formSignUp">
+
+            <div id="form-headSignUp">
+                <img src="\image\picker4.png" alt="mainLogoImage">
+            </div>
+
+            <div id="signUpForm">
+
+                <form action="/reset" method="POST">
+
+                    
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+
+                   
+                    <input type="password" name="password" id="password" placeholder="New Password" required>
+
+                    <button type="submit" id="signUpButton">
+                        <h3>Reset</h3>
+                    </button>
+
+                </form>
+
+                <a href="/sign-up"><p p class="havaanAccount">Create Account<p></a>
+                <a href="/login"><p p class="havaanAccount">Login<p></a>
+            </div>
+        </div>
+
+
+        <%- include('extra/footer') %>
+
+</body>
+
+</html>
+

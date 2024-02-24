@@ -1,0 +1,17 @@
+#footer{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    position:relative;
+   
+}
+
+#footer h2,#footer h2{
+
+    margin: 0;
+    align-self: center;
+  
+}

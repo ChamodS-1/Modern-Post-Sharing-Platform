@@ -1,0 +1,624 @@
+
+
+body {
+
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(0, 0, 0);
+}
+
+
+.final{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    
+}
+
+.final2{
+    display: flex;
+    background-color: rgb(7, 6, 6);
+    
+}
+
+.main-pane {
+   
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    padding: 2.5rem 1.5rem;
+    width: 12.5rem;
+    height: 100vh;
+    border-right: 1px solid rgba(128, 128, 128, 0.281);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+}
+
+.condition {
+   
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    padding: 2.5rem 1.5rem;
+    width: 17.5rem;
+    height: 100vh;
+    border-right: 1px solid rgba(128, 128, 128, 0.281);
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    left: 15.6rem;
+}
+
+.profile {
+   
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    padding: 2.5rem 1.5rem;
+    width: 95rem;
+    height: 100vh;
+    border-right: 1px solid rgba(128, 128, 128, 0.281);
+}
+
+.profileInfo{
+   
+    width: fit-content;
+    height: fit-content;
+    margin-left: 43rem;
+    padding: 1rem 0;
+    position: relative;
+    animation: movePane 0.8s ease forwards;
+}
+
+@keyframes movePane {
+    from {
+        right: calc(100% - 89rem); 
+    }
+    to {
+        right: 0;
+    }
+}
+
+.profileInfo .prof{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.profileDp{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: rgb(38,38,38);
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.profileDp p{
+    margin: 0;
+}
+
+.pdDetails{
+    width: 15.5rem;
+   
+}
+
+.pdDetails .dpName{
+    font-size: 1rem;
+}
+
+.pdDetails .dpfullName{
+    font-size: 0.9rem;
+    color: rgb(160,162,165);
+}
+
+.custom-file-upload{
+    background-color: rgb(0,149,246);
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 7rem;
+}
+
+.mylinks #linkName{
+    width: 10rem;
+    margin-right: 0.3rem;
+}
+
+.mylinks #linkAddress{
+    width: 25rem;
+    margin-bottom: 0.8rem;
+}
+
+#profDP{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.othertabs .prof{
+    font-size: 1rem;
+    width: fit-content;
+    margin-top: 2.1rem;
+}
+
+.othertabs .limitation{
+    font-size: 0.8rem;
+    color: rgba(160, 162, 165, 0.801);;
+    margin-top: -1.5rem;
+    margin-bottom: 0;
+    /* display: none; */
+    margin-left: 35.5rem;
+    
+}
+
+#navProfImg{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+}
+
+.othertabs .limitation2{
+    font-size: 0.8rem;
+    color: rgba(160, 162, 165, 0.801);;
+
+    margin-bottom: 0;
+    /* display: none; */
+    margin-left: 35.5rem;
+    
+}
+
+.othertabs #spanCount{
+    margin: 0;
+}
+
+.submitBut button{
+    background-color: rgb(0,149,246);
+    color: aliceblue;
+    padding: 0.8rem 6rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-left: 23.5rem;
+}
+
+.submitBut button:hover{
+    background-color: rgb(0, 112, 248);
+}
+
+
+.othertabs input{
+    width: 37.2rem;
+    padding: 0.8rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: aliceblue;
+    border: 1px solid rgba(160, 162, 165, 0.498);
+        
+}
+
+.othertabs .warningmsg{
+    font-size: 0.75rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    color: rgb(160,162,165);
+}
+
+.bioclass{
+    margin-bottom: 0.9rem;
+    background: transparent;
+    border: 1px solid rgba(160, 162, 165, 0.498);
+    color:rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+#email{
+    border: none;
+    color:rgb(160,162,165);
+    font-weight: 500;
+    user-select: none;
+}
+
+#emailStatic{
+    background-color: rgb(38,38,38);
+    border: none;
+    color:rgb(160,162,165);
+    font-weight: 500;
+    user-select: none;
+}
+
+#profileName{
+    background: transparent;
+    border: 1px solid rgba(160, 162, 165, 0.498);
+    color:rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.linkSection p a{
+    /* font-family: Arial, Helvetica, sans-serif; */
+    color: rgb(222,239,252);
+    font-size: 0.86rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+        
+}
+
+#sizePredictor{
+    cursor: pointer;
+}
+
+#sizePredictor:hover{
+    text-decoration: underline;
+}
+
+#fixedLinks .myLinks a img{
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+}
+
+#fixedLinks .myLinks a img{
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+}
+
+#fixedLinks{
+    position: fixed;
+    width: 25rem;
+    top: 15rem;
+    left: 38rem;
+    background-color: rgb(38,38,38);
+    z-index: 100;
+    border-radius: 12px;
+    padding: 0.5rem;
+    display: none;
+}
+
+#fixedLinks .linkTitle{
+    width: fit-content;
+    margin: 0.5rem auto;
+    font-weight: 600;
+    
+}
+
+#fixedLinks .myLinks a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(222,239,252);
+    font-size: 0.87rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1rem;
+    
+        
+}
+
+#fixedLinks .myLinks{
+    padding: 0.7rem;
+    border-top: 1px solid rgba(160, 162, 165, 0.498);
+    margin: 0;
+   
+}
+
+#fixedLinks .close{
+    display: flex;
+    align-items: center;
+}
+
+#fixedLinks .close img{
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.allCover{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.831);
+    position: fixed;
+    z-index: 90;
+    display: none;
+}
+
+.allCover2{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.831);
+    position: fixed;
+    z-index: 90;
+    display: none;
+}
+
+#main-pane {
+
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(14,16,18);
+    padding: 0.5rem 5rem;
+    color: aliceblue;
+    margin-top: 1rem;
+
+}
+
+#mainLogo{
+
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    margin-left: 0.6rem;
+}
+
+#mainLogo h1{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.main-pane a{
+
+    text-decoration: none;
+    color: aliceblue;
+
+}
+
+.list{
+    margin-top: 2.8rem;
+}
+
+.list ul {
+
+    list-style: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding: 0;
+    
+    
+}
+
+.list a{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: 14rem;
+    background-color: transparent;
+    padding: 0.7rem;
+    border-radius: 8px;
+    margin-bottom: -1.5rem;
+       
+} 
+
+.addthisOne{
+    width: 14rem;
+    background-color: rgb(38,38,38);
+    padding: 0.7rem;
+    border-radius: 8px;
+} 
+
+
+#addthis{
+    width: 14rem;
+    background-color: rgb(38,38,38);
+    padding: 0.7rem;
+    border-radius: 8px;
+} 
+
+
+.list ul p{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    margin-bottom: 2.1rem;
+    color: aliceblue;
+}
+
+.list {
+
+    align-self: center;
+
+}
+
+.list h2{
+
+    margin: 0;
+}
+
+.list a{
+
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.list a:hover{
+
+    background-color: rgb(58, 58, 58);
+       
+}
+
+.notification{
+    position: fixed;
+    background-color: rgba(38, 38, 38, 0.884);
+    padding: 0.9rem 12rem 0.9rem 0.9rem;
+    top: 41rem;
+    left: 49rem;
+    border-radius: 8px;
+    z-index: 500;
+    animation: increaseSize 0.8s ease forwards;
+}
+
+@keyframes increaseSize {
+    0% { transform: scale(1.1); } 
+    100% { transform: scale(1); }
+}
+
+
+.notification p{
+    font-size: 0.88rem;
+    color: rgb(215, 218, 223);
+    margin: 0;
+}
+
+
+
+.notification2{
+    position: fixed;
+    background-color: rgba(38, 38, 38, 0.884);
+    padding: 0.9rem 12rem 0.9rem 0.9rem;
+    top: 1rem;
+    left: 45rem;
+    border-radius: 8px;
+    z-index: 500;
+    animation: increaseSize 0.8s ease forwards;
+}
+
+@keyframes increaseSize {
+    0% { transform: scale(1.1); } 
+    100% { transform: scale(1); }
+}
+
+
+.notification2 p{
+    font-size: 0.88rem;
+    color: rgb(215, 218, 223);
+    margin: 0;
+}
+
+.notification3{
+    position: fixed;
+    background-color: rgba(38, 38, 38, 0.884);
+    padding: 0.9rem 12rem 0.9rem 0.9rem;
+    top: 35rem;
+    left: 30rem;
+    border-radius: 8px;
+    z-index: 500;
+    animation: increaseSize 0.8s ease forwards;
+    display: none;
+}
+
+@keyframes increaseSize {
+    0% { transform: scale(1.1); } 
+    100% { transform: scale(1); }
+}
+
+
+.notification3 p{
+    font-size: 0.88rem;
+    color: rgb(215, 218, 223);
+    margin: 0;
+}
+
+.notificationCenter{
+    width: 21rem;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    left: 15rem;
+    top: 0rem;
+    z-index: 30;
+    border-radius: 15px;
+    border: 1px solid rgba(160, 162, 165, 0.498);
+    overflow-y: scroll;
+    color: aliceblue;
+    padding: 1rem 2rem;
+    display: none;    
+}
+
+.forwardAni{
+    animation: moveNotification 0.8s ease forwards;
+}
+
+.backwardAni{
+    animation: moveNotification2 0.8s ease forwards;
+}
+
+.notificationsDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.notificationsDetails p{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.notificationsDetails img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+@keyframes moveNotification {
+    from {
+        left: -12rem;
+    }
+    to {
+        right: calc(100% - 90rem); 
+    }
+}
+
+@keyframes moveNotification2 {
+    from {
+        right: calc(100% - 90rem); 
+    }
+    to {
+        left: -12rem;
+    }
+}
+
+
+.catchNotifications{
+    cursor: pointer;
+}
+
+.notificationHolder{
+    color: black;
+    padding: 0;
+}
+
+.notificationHolder li{
+    list-style: none;
+
+}
+
+.actualNotifications{
+    width: 18rem;
+    height: 4rem;
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 1rem;
+
+}
+
+.actualNotifications .title{
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: rgba(54, 54, 54, 0.715);
+}
+
+.actualNotifications .note{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.actualNotifications .date{
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: rgba(54, 54, 54, 0.715);
+}
+
+.actualNotifications p {
+    margin: 0;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('extra/meta-data') %>
+        <link rel="stylesheet" href="/style/main.css">
+        <link rel="stylesheet" href="/style/post.css">
+        <link rel="stylesheet" href="/style/allpost.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <title>User Validation</title>
+</head>
+
+<body>
+
+    <div class="main-pane">
+    
+        <div id="inser-form2">
+
+            <div id="form-head">
+                <h3><img src="image/icons8-correct-144.png" alt="" style="width: 5rem;"></h3>
+                <h3 id="emailName">Account activation link sent to <%= emailAd %></h3>
+                <a href="mailto:"+<%= emailAd %>><h4 id="openMail">OPEN MY EMAIL</h4></a>
+
+            
+            </div>
+
+       
+        </div>
+    </div>
+
+        <%- include('extra/footer') %>
+
+</body>
+
+</html>
+

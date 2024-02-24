@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('extra/meta-data') %>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/user.css">
+    <link rel="stylesheet" href="/style/card.css">
+    <link rel="stylesheet" href="/style/extra.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <script src="/scripts/profileEdite.js" defer></script>
+    <script src="/scripts/notifications.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>Profile</title>
+</head>
+
+<body>
+
+    <% if (empty) { %>
+    <div class="notification">
+        <p>Profile name should at least 5 charactors.</p>
+    </div>
+    <% } %>
+    
+    <!-- <%- include('extra/main-pane copy') %> -->
+<div class="final">
+
+    <div class="main-pane">
+        <div id="mainLogo">
+            <img src="\image\navbarIcons\vercel-icon-512x449-3422jidz.png" alt="mainlogo" style="width: 2rem; filter: invert(100%);">
+            <h1>Peek</h1>
+        </div>
+
+    <% for(const keys of user)  { %>
+
+        <div class="list">
+            <ul>
+                <li>
+                    <p>
+                        <a href="/user/<%= keys.userId %>">
+                        <img src="\image\navbarIcons\icons8-home-29.png" alt="">
+                        Home
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="/user/myposts/<%= keys.userId %>">
+                        <img src="\image\navbarIcons\icons8-grid-29.png" alt="">
+                        My post
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p class="catchNotifications" data-user="<%= keys.userId %>" data-userimage="<%= keys.file %>">
+                        <a class="addthisOne">
+                        <img src="\image\navbarIcons\icons8-heart-29.png" alt="" id="showHeart">
+                        <img src="\image\icons8-heart-29 (1).png" alt="" id="notShowHeart" style="display: none;">
+                        Notifications 
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="/user/create-post/<%= keys.userId %>">
+                        <img src="\image\navbarIcons\icons8-plus-29.png" alt="">
+                        Create
+                      </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="/account/edit/<%= keys.userId %>" id="addthis">
+                        <img src="<%= keys.file %>" alt="profilePic" id="navProfImg">
+                       Profile
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p id="myLogOut"><a href="/login?userEnable=<%= keys.userId %>">Log Out</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="notificationCenter">
+        <div class="notificationsDetails">
+            <p>Notifications</p>
+            <img src="" alt="" id="notificationImage">
+        </div>
+
+        <div>
+            <ul class="notificationHolder">
+                <li>
+                    <div class="actualNotifications">
+                        <p class="title">You Uploaded new Post</p>
+                        <p class="note">Places in Singapore</p>
+                        <p class="date">Thu Feb 15 2024</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="condition">
+        <p class="setProf">Setting</p>
+        <div id="accountCenter">
+            <div class="centerDetails">
+                <img src="\image\center\icons8-triangle-25.png" alt="">
+                <p>Peek</p>
+            </div>
+            <p class="titleClass"><b>Account Manager</b></p>
+            <p class="informations">Manage your account settings here. Don't share sensitive data.</p>
+
+            <div class="miniDetails">
+                <img src="\image\center\icons8-customer-20.png" alt="">
+                <p class="informationsDec">Personal details</p>
+            </div>
+
+            <div class="miniDetails">
+                <img src="\image\center\icons8-protect-20 (1).png" alt="">
+                <p class="informationsDec">Password & Security</p>
+            </div>
+
+            <div class="miniDetails">
+                <img src="\image\center\icons8-security-shield-20.png" alt="">
+                <p class="informationsDec">Privacy</p>
+            </div>
+
+            <p class="informations2">All Rights Reserved.</p>
+        </div>
+
+    <li class="this">
+        <p><img src="\image\icons8-male-user-29.png" alt="">
+            <a href="/account/edit/<%= keys.userId %>">Edite profile</a></p>
+    </li>
+
+    <li>
+        <p><img src="\image\icons8-password-29 (1).png" alt="">
+            <a href="/account/edit/password/<%= keys.userId %>">Password</a></p>
+    </li>
+    </div>
+
+    <div class="profile">
+        <div class="profileInfo">
+            <p class="prof">Edite profile</p>
+
+            <form action="/account/edit/<%= keys.userId %>" method="POST" enctype="multipart/form-data">
+
+                <div class="profileDp">
+                    <img src="<%= keys.file %>" alt="" id="profDP">
+                    <div class="pdDetails">
+                        <p class="dpName"><b>@<%= devidedUserName %></b></p>
+                        <p class="dpfullName"><%= keys.userName %></p>
+                    </div>
+                    <div class="fileinput">
+
+                        <input type="file" name="image2" id="fileInput" style="display: none;">
+                        <label for="fileInput" class="custom-file-upload">Change Photo</label>
+                    </div>
+                </div>
+
+                <div class="othertabs">
+                    <p class="prof">Email</p>
+                    <input type="text" id="emailStatic"  value="<%= keys.email %>" disabled>
+                    <input type="text" id="email2" name="emailAdd" value="<%= keys.email %>" hidden>
+                    <p class="warningmsg">Editing your email is not available because your account actived under this email.</p>
+
+                    <p class="prof">Profile name</p>
+                    <input type="text" id="profileName" name="profilename" value="<%= keys.userName %>" maxlength="25" required>
+                    <p class="limitation"><span id="spanCount">1</span>/25</p>
+
+                    <p class="prof">Bio</p>
+
+                    <% for(const key of keys.bio) { %>
+
+                    <div>
+                    <input type="text" class="bioclass" name="bio<%= key.bioId %>" value="<%= key.msg %>" maxlength="60">
+                    <!-- <p class="limitation2"><span id="spanCount<%= key.bioId %>">1</span>/25</p> -->
+                    </div>  
+
+                  <% } %>
+
+                  <p class="prof">Links</p>
+
+                  <% for(const linkData of keys.link) { %>
+
+                  <div class="mylinks">
+                      
+                        <input type="text" id="linkName" name="linkname<%= linkData.linkId %>"  value="<%= linkData.linkName %>" placeholder="Website" maxlength="20">
+                        <input type="text" id="linkAddress" name="linkaddress<%= linkData.linkId %>" value="<%= linkData.linkAdd %>" placeholder="Address">
+                    
+                  </div>
+
+                  <% } %>
+
+                    <div class="submitBut">
+                        <button type="submit">Submit</button>
+                    </div>  
+                    <p class="warningmsg">All Rights Reserved. Peek from fireShip</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+<% } %>
+
+</div>
+
+<div id="loading-animation">
+    <!-- Your loading animation HTML goes here -->
+    <div class="spinner"></div>
+  </div>
+
+    </body>
+
+    </html>
+    
