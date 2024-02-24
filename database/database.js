@@ -2,9 +2,10 @@ const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
 let database;
+const mongoURI = process.env.MONGODB_URI;
 
 async function connectTo(){
-    const connection =  await MongoClient.connect('mongodb://localhost:27017');
+    const connection =  await MongoClient.connect(mongoURI);
     database = connection.db('blog');
 }
 
