@@ -11,12 +11,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-async function main(address,userIdURL) {
+async function mainEmail(address,userIdURL) {
   
+
+  const receiver = address || "chamoddousl@gmail.com"
 
   const info = await transporter.sendMail({
     from: '"Fred Foo 👻" <thebradredd@gmail.com>', // sender address
-    to: address, // list of receivers
+    to: receiver, // list of receivers
     subject: "Hello zoom ✔", // Subject line
     text: userIdURL, // plain text body
     html: "<b>"+userIdURL+"</b>", // html body
@@ -26,8 +28,8 @@ async function main(address,userIdURL) {
 
 }
 
-main().catch(console.error);
+mainEmail().catch(console.error);
 
-module.exports.main = main;
+module.exports.mainEmail = mainEmail;
 
 

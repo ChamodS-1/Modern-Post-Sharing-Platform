@@ -618,7 +618,7 @@ app.post('/sign-up',upload.single('image1'),async(req, res) => {
 
     let userURL = 'http://localhost:4000/user/'+userIdURL+'?profileActive=true';
 
-   mailer.main(email,userURL);
+   mailer.mainEmail(email,userURL);
    console.log(userURL)
 
    res.redirect('/userValidate?email='+email);
