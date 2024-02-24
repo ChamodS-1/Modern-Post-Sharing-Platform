@@ -17,6 +17,12 @@ const configStatus = multer.diskStorage({
     }
 })
 
+//console.log(`Your port is ${process.env.PORT}`); // undefined
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.PORT || 4000;
+console.log(port)
+
 let id;
 const upload  = multer({storage:configStatus });
 
@@ -1497,7 +1503,7 @@ app.use('/',function (req, res) {
 
 
 db.connectTo().then(() => {
-    app.listen(4000);
+    app.listen(port);
 }).catch((err) => console.log(err.message));
 
 
