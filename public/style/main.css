@@ -622,3 +622,15 @@ body {
 .actualNotifications p {
     margin: 0;
 }
+
+#validation{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+#validation #emailName{
+    color: aliceblue;
+    
+}
