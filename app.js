@@ -622,7 +622,7 @@ app.post('/sign-up',upload.single('image1'),async(req, res) => {
 
     const userResult =  await db.DbConn().collection('users').insertOne(newUser);
 
-    let userURL = 'http://localhost:4000/user/'+userIdURL+'?profileActive=true';
+    let userURL = 'https://modern-post-sharing-platform.onrender.com/user/'+userIdURL+'?profileActive=true';
 
    mailer.mainEmail(email,userURL);
    console.log(userURL)
