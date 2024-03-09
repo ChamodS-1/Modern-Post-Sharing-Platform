@@ -54,3 +54,23 @@ setTimeout(()=> {
 },4000)
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const submitButton = document.getElementById("submitOne");
+  const loadingIndicator = document.querySelector(".loader");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+    loadingIndicator.style.display = "block";
+
+    submitButton.disabled = true;
+
+    setTimeout(function() {
+      form.submit();
+    }, 2000); 
+  });
+});
+
+
+

@@ -217,7 +217,7 @@ app.get('/find/:id', async(req, res) => {
     
     let devidedUserName;
 
-    if(user[0].userName.split(' ')[1]){
+    if(otherUser[0].userName.split(' ')[1]){
         
         devidedUserName = otheuser[0].userName.split(' ')[0]+otheuser[0].userName.split(' ')[1].charAt(0);
     }else{
@@ -298,6 +298,7 @@ app.post('/account/edit/:id', upload.single('image2'),async (req, res)=> {
    const userID = req.params.id;
    const fileUpload = req.file;
 
+
    if(req.body.profilename.trim().length<5){
         return res.redirect('/account/edit/'+userID+'?empty=true');
    }
@@ -340,6 +341,8 @@ app.post('/account/edit/:id', upload.single('image2'),async (req, res)=> {
       const updatedComments = {
         autherPic : path
       }
+
+   
 
       try {
         const userComments =  await db.DbConn().collection('comments').updateMany({autherEmail:req.body.emailAdd},{$set : updatedComments});

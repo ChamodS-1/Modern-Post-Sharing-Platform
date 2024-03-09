@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/style/main.css">
     <link rel="stylesheet" href="/style/user.css">
     <link rel="stylesheet" href="/style/card.css">
+    <link rel="stylesheet" href="/style/loadingScrenn.css">
     <link rel="stylesheet" href="/style/extra.css">
     <link rel="stylesheet" href="/style/footer.css">
     <script src="/scripts/profileEdite.js" defer></script>
@@ -198,8 +199,10 @@
                   <% } %>
 
                     <div class="submitBut">
-                        <button type="submit">Submit</button>
-                    </div>  
+                        <button type="submit" id="submitOne">Submit</button>
+                        <span class="loader"></span>  
+                    </div>
+                     
                     <p class="warningmsg">All Rights Reserved. Peek from fireShip</p>
                 </div>
 
@@ -210,11 +213,6 @@
 <% } %>
 
 </div>
-
-<div id="loading-animation">
-    <!-- Your loading animation HTML goes here -->
-    <div class="spinner"></div>
-  </div>
 
     </body>
 
