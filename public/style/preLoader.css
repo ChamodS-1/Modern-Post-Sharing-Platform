@@ -1,0 +1,89 @@
+.container{
+    background-color: #000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 500;
+}
+
+.loader {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 300px;
+	flex-shrink: 0;
+	flex-grow: 0;
+	max-width: 100%;
+	background-color: #FFF;
+	box-shadow: 0 5px 10px 0 rgba(#000, .15);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 1rem;
+}
+
+.card-img {
+	padding-bottom: 56.25%;
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+	}
+}
+
+.card-body {
+	padding: 1.5rem;
+}
+
+.card-title {
+	font-size: 1.25rem;
+	line-height: 1.33;
+	font-weight: 700;
+	&.skeleton { 
+		min-height: 28px;
+		border-radius: 4px;
+	}
+}
+
+.card-intro {
+	margin-top: .75rem;
+	line-height: 1.5;
+	&.skeleton { 
+		min-height: 72px;
+		border-radius: 4px;
+	}
+}
+
+.skeleton {
+	background-color: #e2e5e7;
+	background-image:			
+			linear-gradient(
+				90deg, 
+				rgba(#fff, 0), 
+				rgba(#fff, 0.5),
+				rgba(#fff, 0)
+			);
+	background-size: 40px 100%; 
+	background-repeat: no-repeat; 
+	background-position: left -40px top 0; 
+	animation: shine 1s ease infinite; 
+}
+
+@keyframes shine {
+	to {
+	
+		background-position: right -40px top 0;
+	}
+}
+
+
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}

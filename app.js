@@ -217,7 +217,7 @@ app.get('/find/:id', async(req, res) => {
     
     let devidedUserName;
 
-    if(otherUser[0].userName.split(' ')[1]){
+    if(otheuser[0].userName.split(' ')[1]){
         
         devidedUserName = otheuser[0].userName.split(' ')[0]+otheuser[0].userName.split(' ')[1].charAt(0);
     }else{
