@@ -1,5 +1,5 @@
 https://drive.google.com/file/d/1-psBNKli7Y8lEN5c9-oPrKxpu4kTPjo1/view - demonstration video
-https://www.linkedin.com/feed/update/urn:li:activity:7166986970257108992/ - linkedin post
+
 
 ![Screenshot (96)](https://github.com/ChamodS-1/Modern-Post-Sharing-Platform/assets/116129813/58e7a8ea-776b-4b8b-bc59-920cb9abc0c0)
 ![Screenshot (99)](https://github.com/ChamodS-1/Modern-Post-Sharing-Platform/assets/116129813/1886c169-afee-4fe8-8a59-984bc6a6d929)
